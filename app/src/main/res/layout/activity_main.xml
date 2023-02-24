@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    android:background="@color/background"
     android:fillViewport="true"
-    android:background="@color/background">
+    tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -43,16 +43,17 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView">
 
             <TextView
+                android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginTop="24dp"
-                android:text="@string/auth"
-                android:letterSpacing="0.1"
                 android:fontFamily="sans-serif-light"
+                android:letterSpacing="0.1"
                 android:textColor="@color/black"
                 android:textSize="@dimen/title"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:text="@string/auth" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
