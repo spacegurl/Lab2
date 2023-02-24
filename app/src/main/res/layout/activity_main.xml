@@ -19,6 +19,7 @@
             android:layout_height="200dp"
             android:layout_marginTop="45dp"
             android:background="@color/black"
+            android:src=""
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
