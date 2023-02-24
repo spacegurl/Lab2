@@ -58,13 +58,16 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp">
+                android:layout_marginTop="16dp"
+                app:prefixText="+7">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/enterPhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/phone"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:maxLength="10" />
 
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -75,6 +78,7 @@
                 android:layout_marginTop="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/enterPasswd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/password"
@@ -104,11 +108,11 @@
 
             <Button
                 android:id="@+id/button"
-                android:onClick="SingInClick"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:backgroundTint="@color/green"
+                android:onClick="SingInClick"
                 android:text="@string/signin"
                 android:textAllCaps="false"
                 android:textSize="@dimen/buttons" />
