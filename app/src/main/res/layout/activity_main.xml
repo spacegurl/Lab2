@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:fillViewport="true"
-    android:background="#EDEDED">
+    android:background="@color/background">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -40,11 +40,11 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginTop="24dp"
-                android:text="Authorization"
+                android:text="@string/auth"
                 android:letterSpacing="0.1"
                 android:fontFamily="sans-serif-light"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="@dimen/title"
                 android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -55,7 +55,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter your Phone"
+                    android:hint="@string/phone"
                     android:inputType="number" />
 
 
@@ -69,7 +69,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter your Passowrd"
+                    android:hint="@string/password"
                     android:inputType="textPassword" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -91,17 +91,17 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="16dp"
-                android:text="Forgot Password?"
-                android:textSize="14sp" />
+                android:text="@string/forgot"
+                android:textSize="@dimen/fields" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:backgroundTint="#55847A"
-                android:text="Sign In"
+                android:backgroundTint="@color/green"
+                android:text="@string/signin"
                 android:textAllCaps="false"
-                android:textSize="16sp" />
+                android:textSize="@dimen/buttons" />
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
