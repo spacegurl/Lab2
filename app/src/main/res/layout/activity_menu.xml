@@ -33,113 +33,117 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/circles"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:id="@+id/text1"
+            android:letterSpacing="0.15"
+            android:text="@string/welcome"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title" />
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text1"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            tools:text="+7-987-654-32-11" />
+
+        <ImageView
+            android:layout_width="256dp"
+            android:id="@+id/picture"
+            android:layout_height="162dp"
+            android:layout_below="@id/number"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/board_with_notes" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/PROJECTS_BUTTON"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@id/circles"
-            android:layout_marginTop="160dp"
-            android:layout_marginBottom="32dp"
-            android:orientation="vertical">
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="26dp"
+            android:layout_below="@id/picture"
+            android:layout_marginTop="48dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:letterSpacing="0.15"
-                android:text="@string/welcome"
+                android:paddingVertical="24dp"
+                android:paddingStart="16dp"
+                android:text="@string/projects"
                 android:textColor="@color/black"
-                android:textSize="@dimen/title" />
+                android:textSize="@dimen/buttons" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/VENDORS_BUTTON"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="26dp"
+            android:layout_below="@id/PROJECTS_BUTTON"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true">
 
             <TextView
-                android:id="@+id/number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                tools:text="+7-987-654-32-11" />
-
-            <ImageView
-                android:layout_width="256dp"
-                android:layout_height="162dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="32dp"
-                android:src="@drawable/board_with_notes" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/PROJECTS_BUTTON"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="26dp"
-                android:layout_marginTop="48dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackground"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="5dp"
-                app:cardUseCompatPadding="true">
+                android:paddingVertical="24dp"
+                android:paddingStart="16dp"
+                android:text="@string/vendors"
+                android:textColor="@color/black"
+                android:textSize="@dimen/buttons" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingVertical="24dp"
-                    android:paddingStart="16dp"
-                    android:text="@string/projects"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/buttons" />
+        </androidx.cardview.widget.CardView>
 
-            </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/NOTES_BUTTON"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/VENDORS_BUTTON"
+            android:layout_marginHorizontal="26dp"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/VENDORS_BUTTON"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="26dp"
-                android:layout_marginTop="10dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackground"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="5dp"
-                app:cardUseCompatPadding="true">
+                android:paddingVertical="24dp"
+                android:paddingStart="16dp"
+                android:text="@string/notes"
+                android:textColor="@color/black"
+                android:textSize="@dimen/buttons" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingVertical="24dp"
-                    android:paddingStart="16dp"
-                    android:text="@string/vendors"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/buttons" />
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/NOTES_BUTTON"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="26dp"
-                android:layout_marginTop="10dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackground"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="5dp"
-                app:cardUseCompatPadding="true">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingVertical="24dp"
-                    android:paddingStart="16dp"
-                    android:text="@string/notes"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/buttons" />
-
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
+        </androidx.cardview.widget.CardView>
     </RelativeLayout>
 
 </ScrollView>

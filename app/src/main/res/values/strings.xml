@@ -9,4 +9,6 @@
     <string name="projects">Projects</string>
     <string name="vendors">Vendors</string>
     <string name="notes">Notes</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="dont_account">Don\'t have an account? Sign up</string>
 </resources>

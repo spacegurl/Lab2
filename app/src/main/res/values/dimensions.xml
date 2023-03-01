@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="title" > 20sp </dimen>
+    <dimen name="title" > 26sp </dimen>
     <dimen name="buttons" > 16sp </dimen>
     <dimen name="fields" > 14sp </dimen>
 </resources>
