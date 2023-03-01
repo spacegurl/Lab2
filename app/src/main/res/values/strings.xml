@@ -5,10 +5,13 @@
     <string name="password">Enter your Password</string>
     <string name="forgot">Forgot Password?</string>
     <string name="signin">Sign In</string>
+    <string name="getstarted">Get Started</string>
     <string name="welcome">Welcome Onboard!</string>
     <string name="projects">Projects</string>
     <string name="vendors">Vendors</string>
     <string name="notes">Notes</string>
     <string name="welcome_back">Welcome Back!</string>
     <string name="dont_account">Don\'t have an account? Sign up</string>
+    <string name="get_started">Get things started with \n Designer Planner</string>
+    <string name="admin_log_in">Admin Log In</string>
 </resources>
