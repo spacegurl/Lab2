@@ -41,7 +41,7 @@
             android:layout_gravity="center"
             android:id="@+id/text1"
             android:letterSpacing="0.15"
-            android:text="@string/welcome"
+            android:text="@string/welcome_onboard"
             android:textColor="@color/black"
             android:textSize="@dimen/title" />
 
