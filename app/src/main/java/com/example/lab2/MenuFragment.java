@@ -14,6 +14,7 @@ import com.example.lab2.databinding.FragmentMenuBinding;
 
 public class MenuFragment extends Fragment {
     private FragmentMenuBinding binding;
+    private String phone = "";
 
     public static final String KEY_PHONE = "key phone";
 
@@ -28,6 +29,15 @@ public class MenuFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getArgs();
+        binding.backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle result = new Bundle();
+                result.putString(SignInFragment.KEY_NUMBER, phone);
+                getParentFragmentManager().setFragmentResult(SignInFragment.KEY_RESULT, result);
+                requireActivity().onBackPressed();
+            }
+        });
     }
 
     public static MenuFragment menuFragment(String phone){
@@ -41,8 +51,10 @@ public class MenuFragment extends Fragment {
     public void getArgs(){
         Bundle bundle = this.getArguments();
         if (bundle != null){
-            String phone = bundle.getString(KEY_PHONE);
+            phone = bundle.getString(KEY_PHONE);
             binding.number.setText("+7" + phone);
         }
     }
+
+
 }

@@ -14,6 +14,19 @@
 
 
         <ImageView
+            android:id="@+id/back_arrow"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:src="@drawable/baseline_arrow_back_24" />
+
+
+        <ImageView
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_alignParentTop="true"
@@ -35,12 +48,12 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/text1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/circles"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
-            android:id="@+id/text1"
             android:letterSpacing="0.15"
             android:text="@string/welcome_onboard"
             android:textColor="@color/black"
@@ -56,8 +69,8 @@
             tools:text="+7-987-654-32-11" />
 
         <ImageView
-            android:layout_width="256dp"
             android:id="@+id/picture"
+            android:layout_width="256dp"
             android:layout_height="162dp"
             android:layout_below="@id/number"
             android:layout_centerHorizontal="true"
@@ -69,9 +82,9 @@
             android:id="@+id/PROJECTS_BUTTON"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/picture"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="26dp"
-            android:layout_below="@id/picture"
             android:layout_marginTop="48dp"
             android:clickable="true"
             android:focusable="true"
@@ -96,9 +109,9 @@
             android:id="@+id/VENDORS_BUTTON"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/PROJECTS_BUTTON"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="26dp"
-            android:layout_below="@id/PROJECTS_BUTTON"
             android:layout_marginTop="10dp"
             android:clickable="true"
             android:focusable="true"
@@ -123,8 +136,8 @@
             android:id="@+id/NOTES_BUTTON"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/VENDORS_BUTTON"
+            android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="26dp"
             android:layout_marginTop="10dp"
             android:clickable="true"

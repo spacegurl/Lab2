@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentResultListener;
 
 import com.example.lab2.databinding.FragmentSignInBinding;
 import com.example.lab2.databinding.FragmentSignUpBinding;
@@ -17,6 +18,8 @@ public class SignInFragment extends Fragment {
 
     public static final String KEY_PHONE = "key phone";
     public static final String KEY_PASSWORD = "key password";
+    public static final String KEY_RESULT = "key result";
+    public static final String KEY_NUMBER = "key number";
 
     @Nullable
     @Override
@@ -37,6 +40,15 @@ public class SignInFragment extends Fragment {
                         .replace(R.id.fragment_container, MenuFragment.menuFragment(phone))
                         .addToBackStack(null).commit();
 
+            }
+        });
+
+        getParentFragmentManager().setFragmentResultListener(KEY_RESULT, this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+                String phone = result.getString(KEY_NUMBER);
+                binding.enterPhone.setText(phone);
+                binding.enterPasswd.setText(""); // clear password
             }
         });
     }
