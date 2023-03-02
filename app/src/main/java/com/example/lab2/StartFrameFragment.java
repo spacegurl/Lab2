@@ -56,6 +56,25 @@ public class StartFrameFragment extends Fragment {
         Log.d(TAG, "Fragment Lifecycle = " + getLifecycle().getCurrentState().toString());
         Toast.makeText(getContext(), "onViewCreated", Toast.LENGTH_SHORT).show();
 
+        binding.getstarted.setOnClickListener(new View.OnClickListener() { //через точку вызвали интерфейс
+            @Override
+            public void onClick(View view) {
+                requireActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, SignUpFragment.signUpFragment())
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
+
+        binding.signinButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                requireActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, SignInFragment.signInFragment())
+                        .addToBackStack(null).commit();
+            }
+        });
+
         super.onViewCreated(view, savedInstanceState);
     }
 

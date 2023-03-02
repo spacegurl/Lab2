@@ -24,5 +24,29 @@ public class SignUpFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        binding.buttonSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String phone = binding.enterPhone.getText().toString();
+                String password = binding.enterPasswd.getText().toString();
+                requireActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, SignInFragment.signInFragment(phone, password))
+                        .commit();
+            }
+        });
+        binding.hintSignin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                requireActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, SignInFragment.signInFragment())
+                        .commit();
+            }
+        });
     }
+
+    public static SignUpFragment signUpFragment(){
+        return  new SignUpFragment();
+    }
+
+
 }

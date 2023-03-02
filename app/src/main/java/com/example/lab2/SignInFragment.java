@@ -32,6 +32,10 @@ public class SignInFragment extends Fragment {
         binding.buttonSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String phone = binding.enterPhone.getText().toString();
+                requireActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, MenuFragment.menuFragment(phone))
+                        .addToBackStack(null).commit();
 
             }
         });
