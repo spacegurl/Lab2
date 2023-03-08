@@ -42,37 +42,28 @@
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:letterSpacing="0.15"
-            android:text="@string/welcome_onboard"
+            android:text="@string/archive"
             android:textColor="@color/black"
             android:textSize="@dimen/title" />
-
-        <TextView
-            android:id="@+id/number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/text1"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
-            tools:text="+7-987-654-32-11" />
 
         <ImageView
             android:id="@+id/picture"
             android:layout_width="256dp"
             android:layout_height="162dp"
-            android:layout_below="@id/number"
+            android:layout_below="@id/text1"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:layout_marginTop="32dp"
-            android:src="@drawable/board_with_notes" />
+            android:src="@drawable/cat_on_docs" />
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/PROJECTS_BUTTON"
+            android:id="@+id/ARCHIVE1_BUTTON"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/picture"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="26dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="24dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -86,17 +77,17 @@
                 android:layout_height="wrap_content"
                 android:paddingVertical="24dp"
                 android:paddingStart="16dp"
-                android:text="@string/projects"
+                tools:text="Cambridge Campus"
                 android:textColor="@color/black"
                 android:textSize="@dimen/buttons" />
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/VENDORS_BUTTON"
+            android:id="@+id/ARCHIVE2_BUTTON"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/PROJECTS_BUTTON"
+            android:layout_below="@id/ARCHIVE1_BUTTON"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="26dp"
             android:layout_marginTop="10dp"
@@ -113,17 +104,17 @@
                 android:layout_height="wrap_content"
                 android:paddingVertical="24dp"
                 android:paddingStart="16dp"
-                android:text="@string/vendors"
+                tools:text="Gherkin Vogue Office"
                 android:textColor="@color/black"
                 android:textSize="@dimen/buttons" />
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/ARCHIVE_BUTTON"
+            android:id="@+id/ARCHIVE3_BUTTON"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/VENDORS_BUTTON"
+            android:layout_below="@id/ARCHIVE2_BUTTON"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="26dp"
             android:layout_marginTop="10dp"
@@ -140,11 +131,12 @@
                 android:layout_height="wrap_content"
                 android:paddingVertical="24dp"
                 android:paddingStart="16dp"
-                android:text="@string/archive"
+                tools:text="Chelsea Cottage"
                 android:textColor="@color/black"
                 android:textSize="@dimen/buttons" />
 
         </androidx.cardview.widget.CardView>
+
     </RelativeLayout>
 
 </ScrollView>

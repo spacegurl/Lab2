@@ -29,13 +29,21 @@ public class MenuFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getArgs();
-        binding.backArrow.setOnClickListener(new View.OnClickListener() {
+        binding.PROJECTSBUTTON.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle result = new Bundle();
-                result.putString(SignInFragment.KEY_NUMBER, phone);
-                getParentFragmentManager().setFragmentResult(SignInFragment.KEY_RESULT, result);
-                requireActivity().onBackPressed();
+                requireActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new ProjectsFragment())
+                        .addToBackStack(null).commit();
+            }
+        });
+
+        binding.ARCHIVEBUTTON.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                requireActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new ArchiveFragment())
+                        .addToBackStack(null).commit();
             }
         });
     }
