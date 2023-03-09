@@ -8,7 +8,7 @@
     android:fillViewport="true"
     tools:context=".MenuFragment">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -18,11 +18,11 @@
             android:layout_height="48dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="32dp"
-            android:src="@drawable/account" />
+            android:src="@drawable/account"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/circles"
@@ -44,99 +44,19 @@
             android:letterSpacing="0.15"
             android:text="@string/archive"
             android:textColor="@color/black"
-            android:textSize="@dimen/title" />
+            android:textSize="@dimen/title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/circles" />
 
-        <ImageView
-            android:id="@+id/picture"
-            android:layout_width="256dp"
-            android:layout_height="162dp"
-            android:layout_below="@id/text1"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
-            android:layout_marginTop="32dp"
-            android:src="@drawable/cat_on_docs" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/ARCHIVE1_BUTTON"
+        <ListView
+            android:id="@+id/archive_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/picture"
-            android:layout_centerHorizontal="true"
-            android:layout_marginHorizontal="26dp"
-            android:layout_marginTop="24dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="5dp"
-            app:cardUseCompatPadding="true">
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text1"
+            tools:listitem="@layout/item_archive_list" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingVertical="24dp"
-                android:paddingStart="16dp"
-                tools:text="Cambridge Campus"
-                android:textColor="@color/black"
-                android:textSize="@dimen/buttons" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/ARCHIVE2_BUTTON"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/ARCHIVE1_BUTTON"
-            android:layout_centerHorizontal="true"
-            android:layout_marginHorizontal="26dp"
-            android:layout_marginTop="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="5dp"
-            app:cardUseCompatPadding="true">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingVertical="24dp"
-                android:paddingStart="16dp"
-                tools:text="Gherkin Vogue Office"
-                android:textColor="@color/black"
-                android:textSize="@dimen/buttons" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/ARCHIVE3_BUTTON"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/ARCHIVE2_BUTTON"
-            android:layout_centerHorizontal="true"
-            android:layout_marginHorizontal="26dp"
-            android:layout_marginTop="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="5dp"
-            app:cardUseCompatPadding="true">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingVertical="24dp"
-                android:paddingStart="16dp"
-                tools:text="Chelsea Cottage"
-                android:textColor="@color/black"
-                android:textSize="@dimen/buttons" />
-
-        </androidx.cardview.widget.CardView>
-
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
