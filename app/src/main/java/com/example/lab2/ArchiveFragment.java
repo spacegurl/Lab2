@@ -21,7 +21,8 @@ public class ArchiveFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         binding = FragmentArchiveBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -41,5 +42,4 @@ public class ArchiveFragment extends Fragment {
         binding.archiveList.setAdapter(adapter);
 
     }
-
 }
