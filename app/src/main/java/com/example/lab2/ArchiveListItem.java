@@ -1,8 +1,8 @@
 package com.example.lab2;
 
 public class ArchiveListItem {
-    private int id_image;
-    private String completed_project;
+    private int id_image; // поле для изображения
+    private String completed_project; // поле для текста
 
     public ArchiveListItem(int id_image, String completed_project) {
         this.id_image = id_image;

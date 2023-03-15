@@ -10,4 +10,5 @@
 
     <color name="background">#EDEDED</color>
     <color name="green">#55847A</color>
+    <color name="admin">#125D7C</color>
 </resources>
