@@ -30,20 +30,34 @@ public class SignUpFragment extends Fragment {
             public void onClick(View view) {
                 String phone = binding.enterPhone.getText().toString();
                 String password = binding.enterPasswd.getText().toString();
+
+                Bundle bundle = new Bundle();
+                bundle.putString(SignInFragment.KEY_PHONE, phone);
+                bundle.putString(SignInFragment.KEY_PASSWORD, password);
+
                 /*requireActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, SignInFragment.signInFragment(phone, password))
                         .commit();*/
-                Navigation.findNavController(view).navigate(R.id.action_signUpFragment_to_signInFragment);
+                Navigation.findNavController(view)
+                        .navigate(R.id.action_signUpFragment_to_signInFragment, bundle);
             }
         });
 
         binding.hintSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String phone = binding.enterPhone.getText().toString();
+                String password = binding.enterPasswd.getText().toString();
+
+                Bundle bundle = new Bundle();
+                bundle.putString(SignInFragment.KEY_PHONE, phone);
+                bundle.putString(SignInFragment.KEY_PASSWORD, password);
+
                 /*requireActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, SignInFragment.signInFragment())
                         .commit();*/
-                Navigation.findNavController(view).navigate(R.id.action_signUpFragment_to_signInFragment);
+                Navigation.findNavController(view)
+                        .navigate(R.id.action_signUpFragment_to_signInFragment, bundle);
             }
         });
     }
