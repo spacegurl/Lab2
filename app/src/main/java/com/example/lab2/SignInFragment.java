@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
+import androidx.navigation.Navigation;
 
 import com.example.lab2.databinding.FragmentSignInBinding;
 import com.example.lab2.databinding.FragmentSignUpBinding;
@@ -24,7 +25,7 @@ public class SignInFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = FragmentSignInBinding.inflate(getLayoutInflater());
+        binding = FragmentSignInBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
@@ -36,10 +37,18 @@ public class SignInFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String phone = binding.enterPhone.getText().toString();
-                requireActivity().getSupportFragmentManager().beginTransaction()
+                /*requireActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, MenuFragment.menuFragment(phone))
-                        .addToBackStack(null).commit();
+                        .addToBackStack(null).commit();*/
+                Navigation.findNavController(view).navigate(R.id.action_signInFragment_to_menuFragment);
 
+            }
+        });
+
+        binding.hintSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_signInFragment_to_signUpFragment);
             }
         });
 
@@ -53,14 +62,14 @@ public class SignInFragment extends Fragment {
         });
     }
 
-    public static SignInFragment signInFragment(String phone, String password){
+    /*public static SignInFragment signInFragment(String phone, String password){
         SignInFragment signInFragment = new SignInFragment();
         Bundle bundle = new Bundle();
         bundle.putString(KEY_PHONE, phone);
         bundle.putString(KEY_PASSWORD, password);
         signInFragment.setArguments(bundle);
         return signInFragment;
-    }
+    }*/
 
     public void getArgs(){
         Bundle bundle = this.getArguments();
@@ -72,8 +81,8 @@ public class SignInFragment extends Fragment {
         }
     }
 
-    public static SignInFragment signInFragment(){
+    /*public static SignInFragment signInFragment(){
         return new SignInFragment();
-    }
+    }*/
 }
 

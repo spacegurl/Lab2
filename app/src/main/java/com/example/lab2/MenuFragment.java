@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 
 import com.example.lab2.databinding.FragmentMenuBinding;
@@ -21,7 +22,7 @@ public class MenuFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = FragmentMenuBinding.inflate(getLayoutInflater());
+        binding = FragmentMenuBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
@@ -32,29 +33,31 @@ public class MenuFragment extends Fragment {
         binding.PROJECTSBUTTON.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                requireActivity().getSupportFragmentManager().beginTransaction()
+                /*requireActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, new ProjectsFragment())
-                        .addToBackStack(null).commit();
+                        .addToBackStack(null).commit();*/
+                Navigation.findNavController(view).navigate(R.id.action_menuFragment_to_projectsFragment);
             }
         });
 
         binding.ARCHIVEBUTTON.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                requireActivity().getSupportFragmentManager().beginTransaction()
+                /*requireActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, new ArchiveFragment())
-                        .addToBackStack(null).commit();
+                        .addToBackStack(null).commit();*/
+                Navigation.findNavController(view).navigate(R.id.action_menuFragment_to_archiveFragment);
             }
         });
     }
 
-    public static MenuFragment menuFragment(String phone){
+    /*public static MenuFragment menuFragment(String phone){
         MenuFragment menuFragment = new MenuFragment();
         Bundle bundle = new Bundle();
         bundle.putString(KEY_PHONE, phone);
         menuFragment.setArguments(bundle);
         return menuFragment;
-    }
+    }*/
 
     public void getArgs(){
         Bundle bundle = this.getArguments();

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startFrameFragment">
+
+    <fragment
+        android:id="@+id/startFrameFragment"
+        android:name="com.example.lab2.StartFrameFragment"
+        android:label="StartFrameFragment"
+        tools:layout="@layout/fragment_start_frame">
+        <action
+            android:id="@+id/action_startFrameFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_startFrameFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_startFrameFragment_to_signInAdminFragment"
+            app:destination="@id/signInAdminFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/projectsFragment"
+        android:name="com.example.lab2.ProjectsFragment"
+        android:label="ProjectsFragment"
+        tools:layout="@layout/fragment_projects"/>
+    <fragment
+        android:id="@+id/archiveFragment"
+        android:name="com.example.lab2.ArchiveFragment"
+        android:label="ArchiveFragment"
+        tools:layout="@layout/fragment_archive"/>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.lab2.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.lab2.MenuFragment"
+        android:label="fragment_archive"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_projectsFragment"
+            app:destination="@id/projectsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_archiveFragment"
+            app:destination="@id/archiveFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.lab2.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuAdminFragment"
+        android:name="com.example.lab2.MenuAdminFragment"
+        android:label="MenuAdminFragment"
+        tools:layout="@layout/fragment_menu_admin"/>
+    <fragment
+        android:id="@+id/signInAdminFragment"
+        android:name="com.example.lab2.SignInAdminFragment"
+        android:label="SignInAdminFragment"
+        tools:layout="@layout/fragment_sign_in_admin">
+        <action
+            android:id="@+id/action_signInAdminFragment_to_menuAdminFragment"
+            app:destination="@id/menuAdminFragment" />
+    </fragment>
+</navigation>
