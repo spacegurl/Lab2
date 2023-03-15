@@ -40,8 +40,10 @@ public class ArchiveListAdapter extends ArrayAdapter<ArchiveListItem> {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "Completed project in Archive " + (position + 1) + " is clicked", Toast.LENGTH_SHORT).show();
-                Log.d("LIST LOGS", "Log for completed project in Archive " + (position + 1) + " is clicked");
+                Toast.makeText(getContext(), "Completed project in Archive "
+                        + (position + 1) + " is clicked", Toast.LENGTH_SHORT).show();
+                Log.d("LIST LOGS", "Log for completed project in Archive "
+                        + (position + 1) + " is clicked");
             }
         });
 

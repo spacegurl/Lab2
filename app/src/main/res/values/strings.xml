@@ -15,9 +15,13 @@
     <string name="vendors">Vendors</string>
     <string name="notes">Notes</string>
     <string name="archive">Archive</string>
+    <string name="deleted">Deleted</string>
+    <string name="connections">Connections manager</string>
     <string name="welcome_back">Welcome Back!</string>
+    <string name="admin_acc">Admin Account</string>
+    <string name="admin_hint">Wrong button? Return to main page</string>
     <string name="dont_account_signup">Don\'t have an account? Sign up</string>
-    <string name="dont_account_signin">Don\'t have an account? Sign in</string>
+    <string name="dont_account_signin">Already have an account? Sign in</string>
     <string name="get_started">Get things started with \n Designer Planner</string>
     <string name="admin_log_in">Admin Log In</string>
 </resources>

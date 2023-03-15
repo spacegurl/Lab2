@@ -31,7 +31,8 @@ public class ProjectsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         String[] arr = {"Knightsbridge Penthouse", "London House", "Edinburgh Cottage",
-                "Loch-Ness Scotland Villa", "221B Backer Street", "Clarence House", "Chanel Boutique", "Anna Vintour's Apartment"};
+                "Loch-Ness Scotland Villa", "221B Backer Street", "Clarence House", "Chanel Boutique",
+                "Anna Vintour's Apartment"};
         List<ProjectListItem> list = new ArrayList<>();
 
         for (int i = 0; i < 250; i++){

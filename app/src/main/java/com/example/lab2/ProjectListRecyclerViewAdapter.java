@@ -40,7 +40,8 @@ public class ProjectListRecyclerViewAdapter extends RecyclerView.Adapter<Project
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(holder.projectsText.getContext(), "Current project " + (temp + 1) + " is clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(holder.projectsText.getContext(), "Current project "
+                        + (temp + 1) + " is clicked", Toast.LENGTH_SHORT).show();
                 Log.d("LIST LOGS", "Log for current project " + (temp + 1) + " is clicked");
             }
         });
