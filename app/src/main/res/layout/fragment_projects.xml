@@ -71,17 +71,16 @@
             app:layout_constraintTop_toBottomOf="@+id/picture"
             tools:listitem="@layout/item_projects_list" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/plus_button"
+        <ImageButton
+            android:id="@+id/notification"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_below="@id/account"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
-            android:backgroundTint="@color/green"
+            android:background="@android:color/transparent"
+            android:src="@drawable/baseline_notifications_none_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/account" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
