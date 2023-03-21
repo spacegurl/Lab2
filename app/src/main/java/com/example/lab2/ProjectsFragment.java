@@ -4,6 +4,7 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -75,6 +76,9 @@ public class ProjectsFragment extends Fragment {
                         (NotificationManager) requireContext().getSystemService(Context.NOTIFICATION_SERVICE);
 
                 notificationManager.notify(1, notification);
+
+                Intent intent = new Intent(requireContext(), BannersAndService.class);
+                requireActivity().startService(intent);
             }
         });
     }
