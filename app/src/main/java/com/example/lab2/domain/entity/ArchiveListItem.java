@@ -1,4 +1,4 @@
-package com.example.lab2;
+package com.example.lab2.domain.entity;
 
 public class ArchiveListItem {
     private int id_image; // поле для изображения

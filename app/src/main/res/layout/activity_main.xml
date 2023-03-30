@@ -10,8 +10,8 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" />
-    <!--    android:name="com.example.lab2.StartFrameFragment"
+    tools:context=".ui.MainActivity" />
+    <!--    android:name="com.example.lab2.ui.StartFrameFragment"
     декларативный/способ задания через xml
     пишем атрибут андроид нейм и потом до него путь до нужного фрагмента.
     в  этом случае файл джава не изменяется-->

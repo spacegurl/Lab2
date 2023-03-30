@@ -1,4 +1,4 @@
-package com.example.lab2;
+package com.example.lab2.ui.state_holder;
 
 import android.content.Context;
 import android.util.Log;
@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.lab2.R;
+import com.example.lab2.domain.entity.ProjectListItem;
 
 import java.util.List;
 
