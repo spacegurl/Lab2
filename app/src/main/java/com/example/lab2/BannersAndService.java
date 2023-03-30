@@ -13,6 +13,8 @@ import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
 
+import com.example.lab2.ui.MainActivity;
+
 public class BannersAndService extends Service {
 
     @Override

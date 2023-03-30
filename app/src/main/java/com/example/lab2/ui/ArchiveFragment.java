@@ -1,4 +1,4 @@
-package com.example.lab2;
+package com.example.lab2.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,8 +9,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.lab2.R;
 import com.example.lab2.databinding.FragmentArchiveBinding;
 import com.example.lab2.domain.entity.ArchiveListItem;
+import com.example.lab2.ui.state_holder.ArchiveListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

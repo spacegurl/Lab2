@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/startFrameFragment"
-        android:name="com.example.lab2.StartFrameFragment"
+        android:name="com.example.lab2.ui.StartFrameFragment"
         android:label="StartFrameFragment"
         tools:layout="@layout/fragment_start_frame">
         <action
@@ -22,17 +22,17 @@
     </fragment>
     <fragment
         android:id="@+id/projectsFragment"
-        android:name="com.example.lab2.ProjectsFragment"
+        android:name="com.example.lab2.ui.ProjectsFragment"
         android:label="ProjectsFragment"
         tools:layout="@layout/fragment_projects"/>
     <fragment
         android:id="@+id/archiveFragment"
-        android:name="com.example.lab2.ArchiveFragment"
+        android:name="com.example.lab2.ui.ArchiveFragment"
         android:label="ArchiveFragment"
         tools:layout="@layout/fragment_archive"/>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.lab2.SignUpFragment"
+        android:name="com.example.lab2.ui.SignUpFragment"
         android:label="SignUpFragment"
         tools:layout="@layout/fragment_sign_up">
         <action
@@ -41,7 +41,7 @@
     </fragment>
     <fragment
         android:id="@+id/menuFragment"
-        android:name="com.example.lab2.MenuFragment"
+        android:name="com.example.lab2.ui.MenuFragment"
         android:label="fragment_archive"
         tools:layout="@layout/fragment_menu" >
         <action
@@ -53,7 +53,7 @@
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.example.lab2.SignInFragment"
+        android:name="com.example.lab2.ui.SignInFragment"
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_sign_in" >
         <action
@@ -65,12 +65,12 @@
     </fragment>
     <fragment
         android:id="@+id/menuAdminFragment"
-        android:name="com.example.lab2.MenuAdminFragment"
+        android:name="com.example.lab2.ui.MenuAdminFragment"
         android:label="MenuAdminFragment"
         tools:layout="@layout/fragment_menu_admin"/>
     <fragment
         android:id="@+id/signInAdminFragment"
-        android:name="com.example.lab2.SignInAdminFragment"
+        android:name="com.example.lab2.ui.SignInAdminFragment"
         android:label="SignInAdminFragment"
         tools:layout="@layout/fragment_sign_in_admin">
         <action

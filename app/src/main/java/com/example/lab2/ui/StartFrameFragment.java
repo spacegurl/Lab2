@@ -1,4 +1,4 @@
-package com.example.lab2;
+package com.example.lab2.ui;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.example.lab2.R;
 import com.example.lab2.databinding.FragmentStartFrameBinding;
 
 public class StartFrameFragment extends Fragment {

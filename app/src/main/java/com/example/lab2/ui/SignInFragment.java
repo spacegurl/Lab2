@@ -1,4 +1,4 @@
-package com.example.lab2;
+package com.example.lab2.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
 import androidx.navigation.Navigation;
 
+import com.example.lab2.R;
 import com.example.lab2.databinding.FragmentSignInBinding;
 import com.example.lab2.databinding.FragmentSignUpBinding;
 

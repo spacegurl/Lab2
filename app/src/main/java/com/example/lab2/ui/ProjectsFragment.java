@@ -1,4 +1,4 @@
-package com.example.lab2;
+package com.example.lab2.ui;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -16,8 +16,11 @@ import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 
+import com.example.lab2.BannersAndService;
+import com.example.lab2.R;
 import com.example.lab2.databinding.FragmentProjectsBinding;
 import com.example.lab2.domain.entity.ProjectListItem;
+import com.example.lab2.ui.state_holder.ProjectListRecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
