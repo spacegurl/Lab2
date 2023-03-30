@@ -1,4 +1,4 @@
-package com.example.lab2;
+package com.example.lab2.domain.entity;
 
 public class ProjectListItem {
     private int id_image;

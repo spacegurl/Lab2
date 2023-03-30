@@ -17,6 +17,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.lab2.databinding.FragmentProjectsBinding;
+import com.example.lab2.domain.entity.ProjectListItem;
 
 import java.util.ArrayList;
 import java.util.List;

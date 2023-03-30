@@ -13,6 +13,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.lab2.domain.entity.ArchiveListItem;
+
 import java.util.List;
 
 public class ArchiveListAdapter extends ArrayAdapter<ArchiveListItem> {
