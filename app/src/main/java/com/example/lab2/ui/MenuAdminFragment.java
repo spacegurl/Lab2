@@ -1,4 +1,4 @@
-package com.example.lab2;
+package com.example.lab2.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
