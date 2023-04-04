@@ -8,14 +8,16 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.example.lab2.R;
 import com.example.lab2.databinding.FragmentSignInAdminBinding;
-import com.example.lab2.databinding.FragmentSignInBinding;
+import com.example.lab2.ui.state_holder.view_models.AdminViewModel;
 
-public class SignInAdminFragment extends Fragment {
+public class AdminSignInFragment extends Fragment {
     private FragmentSignInAdminBinding binding;
+    private AdminViewModel viewModel;
 
     @Nullable
     @Override
@@ -27,11 +29,15 @@ public class SignInAdminFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        viewModel = new ViewModelProvider(this).get(AdminViewModel.class);
         super.onViewCreated(view, savedInstanceState);
         binding.buttonSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_signInAdminFragment_to_menuAdminFragment);
+                if (viewModel.AdminLogin(
+                        binding.enterPhone.getText().toString(), binding.enterPasswd.getText().toString()
+                ))
+                  Navigation.findNavController(view).navigate(R.id.action_signInAdminFragment_to_menuAdminFragment);
             }
         });
     }

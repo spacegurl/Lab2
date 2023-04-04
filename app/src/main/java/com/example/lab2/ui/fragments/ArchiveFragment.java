@@ -8,11 +8,14 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.lab2.R;
 import com.example.lab2.databinding.FragmentArchiveBinding;
 import com.example.lab2.data.models.ArchiveListItem;
 import com.example.lab2.ui.state_holder.ArchiveListAdapter;
+import com.example.lab2.ui.state_holder.view_models.ArchiveViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +23,7 @@ import java.util.List;
 public class ArchiveFragment extends Fragment {
 
     private FragmentArchiveBinding binding;
+    private ArchiveViewModel viewModel;
 
     @Nullable
     @Override
@@ -31,17 +35,17 @@ public class ArchiveFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        viewModel = new ViewModelProvider(this).get(ArchiveViewModel.class);
         super.onViewCreated(view, savedInstanceState);
-        String[] arr = {"Cambridge Campus", "Chelsea Cottage", "Gherkin Vogue Office",
-                "Oxford Campus", "Birmingham Campus", "Manchester Campus", "Bristol Campus", "Leeds Campus"};
-        List<ArchiveListItem> list = new ArrayList<>();
+        viewModel.archive_list_ld.observe(getViewLifecycleOwner(), new Observer<List<ArchiveListItem>>() {
+            @Override
+            public void onChanged(List<ArchiveListItem> archiveListItems) {
+                ArchiveListAdapter adapter = new ArchiveListAdapter(requireContext(), R.layout.item_archive_list, archiveListItems);
+                binding.archiveList.setAdapter(adapter);
+            }
+        });
 
-        for (int i = 0; i < 250; i++){
-            list.add(new ArchiveListItem(R.drawable.cat_on_docs, arr[(int)(Math.random() * arr.length)]));
-        }
 
-        ArchiveListAdapter adapter = new ArchiveListAdapter(requireContext(), R.layout.item_archive_list, list);
-        binding.archiveList.setAdapter(adapter);
 
     }
 }

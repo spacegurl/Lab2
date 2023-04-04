@@ -24,7 +24,11 @@
         android:id="@+id/projectsFragment"
         android:name="com.example.lab2.ui.fragments.ProjectsFragment"
         android:label="ProjectsFragment"
-        tools:layout="@layout/fragment_projects"/>
+        tools:layout="@layout/fragment_projects">
+        <action
+            android:id="@+id/action_projectsFragment_to_projectContentFragment"
+            app:destination="@id/projectContentFragment" />
+    </fragment>
     <fragment
         android:id="@+id/archiveFragment"
         android:name="com.example.lab2.ui.fragments.ArchiveFragment"
@@ -70,11 +74,16 @@
         tools:layout="@layout/fragment_menu_admin"/>
     <fragment
         android:id="@+id/signInAdminFragment"
-        android:name="com.example.lab2.ui.fragments.SignInAdminFragment"
+        android:name="com.example.lab2.ui.fragments.AdminSignInFragment"
         android:label="SignInAdminFragment"
         tools:layout="@layout/fragment_sign_in_admin">
         <action
             android:id="@+id/action_signInAdminFragment_to_menuAdminFragment"
             app:destination="@id/menuAdminFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/projectContentFragment"
+        android:name="com.example.lab2.ui.fragments.ProjectContentFragment"
+        android:label="ProjectContentFragment"
+        tools:layout="@layout/fragment_project_content"/>
 </navigation>

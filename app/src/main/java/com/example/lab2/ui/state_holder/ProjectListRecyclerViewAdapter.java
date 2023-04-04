@@ -1,6 +1,7 @@
 package com.example.lab2.ui.state_holder;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lab2.R;
@@ -21,6 +23,7 @@ public class ProjectListRecyclerViewAdapter extends RecyclerView.Adapter<Project
 
     private final List<ProjectListItem> projectListItems;
     private final LayoutInflater inflater;
+    public static final String KEY_POS = "key_pos";
 
     public ProjectListRecyclerViewAdapter(Context context, List<ProjectListItem> projectListItems) {
         this.projectListItems = projectListItems;
@@ -46,6 +49,10 @@ public class ProjectListRecyclerViewAdapter extends RecyclerView.Adapter<Project
                 Toast.makeText(holder.projectsText.getContext(), "Current project "
                         + (temp + 1) + " is clicked", Toast.LENGTH_SHORT).show();
                 Log.d("LIST LOGS", "Log for current project " + (temp + 1) + " is clicked");
+                Bundle bundle = new Bundle();
+                bundle.putInt(KEY_POS, holder.getAdapterPosition());
+                Navigation.findNavController(view).navigate(R.id.action_projectsFragment_to_projectContentFragment,
+                        bundle);
             }
         });
 

@@ -9,14 +9,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.example.lab2.R;
 import com.example.lab2.databinding.FragmentSignInBinding;
 import com.example.lab2.databinding.FragmentSignUpBinding;
+import com.example.lab2.ui.state_holder.view_models.SignInViewModel;
 
 public class SignInFragment extends Fragment {
     private FragmentSignInBinding binding;
+
+    private SignInViewModel signInViewModel;
 
     public static final String KEY_PHONE = "key phone";
     public static final String KEY_PASSWORD = "key password";
@@ -32,16 +37,17 @@ public class SignInFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        signInViewModel = new ViewModelProvider(this).get(SignInViewModel.class);
         super.onViewCreated(view, savedInstanceState);
         getArgs();
         binding.buttonSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String phone = binding.enterPhone.getText().toString();
-                /*requireActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, MenuFragment.menuFragment(phone))
-                        .addToBackStack(null).commit();*/
-                Navigation.findNavController(view).navigate(R.id.action_signInFragment_to_menuFragment);
+                if (signInViewModel.SignInLogin(
+                        binding.enterPhone.getText().toString(), binding.enterPasswd.getText().toString()
+                ))
+                  Navigation.findNavController(view).navigate(R.id.action_signInFragment_to_menuFragment);
 
             }
         });

@@ -15,12 +15,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.lab2.BannersAndService;
 import com.example.lab2.R;
 import com.example.lab2.databinding.FragmentProjectsBinding;
 import com.example.lab2.data.models.ProjectListItem;
 import com.example.lab2.ui.state_holder.ProjectListRecyclerViewAdapter;
+import com.example.lab2.ui.state_holder.view_models.ProjectsViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +32,8 @@ public class ProjectsFragment extends Fragment {
 
     private FragmentProjectsBinding binding;
     private static final String CHANNEL_ID = "notification";
+
+    private ProjectsViewModel viewModel;
 
     @Nullable
     @Override
@@ -40,19 +45,18 @@ public class ProjectsFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        viewModel = new ViewModelProvider(this).get(ProjectsViewModel.class);
         super.onViewCreated(view, savedInstanceState);
 
-        String[] arr = {"Knightsbridge Penthouse", "London House", "Edinburgh Cottage",
-                "Loch-Ness Scotland Villa", "221B Backer Street", "Clarence House", "Chanel Boutique",
-                "Anna Vintour's Apartment"};
-        List<ProjectListItem> list = new ArrayList<>();
+        viewModel.project_list_ld.observe(getViewLifecycleOwner(), new Observer<List<ProjectListItem>>() {
+            @Override
+            public void onChanged(List<ProjectListItem> projectListItems) {
+                ProjectListRecyclerViewAdapter adapter = new ProjectListRecyclerViewAdapter(requireContext(), projectListItems); //получили список и отрисовали
+                binding.recyclerView.setAdapter(adapter);
+            }
+        });
 
-        for (int i = 0; i < 250; i++){
-            list.add(new ProjectListItem(R.drawable.paint_swatches, arr[(int)(Math.random() * arr.length)]));
-        }
 
-        ProjectListRecyclerViewAdapter adapter = new ProjectListRecyclerViewAdapter(requireContext(), list);
-        binding.recyclerView.setAdapter(adapter);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(

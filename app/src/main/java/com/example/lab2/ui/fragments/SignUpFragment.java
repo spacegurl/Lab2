@@ -8,13 +8,16 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.example.lab2.R;
 import com.example.lab2.databinding.FragmentSignUpBinding;
+import com.example.lab2.ui.state_holder.view_models.SignUpViewModel;
 
 public class SignUpFragment extends Fragment {
     private FragmentSignUpBinding binding;
+    private SignUpViewModel signUpViewModel;
 
     @Nullable
     @Override
@@ -25,22 +28,25 @@ public class SignUpFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        signUpViewModel = new ViewModelProvider(this).get(SignUpViewModel.class);
         super.onViewCreated(view, savedInstanceState);
         binding.buttonSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String phone = binding.enterPhone.getText().toString();
                 String password = binding.enterPasswd.getText().toString();
+                if (signUpViewModel.SignUpLogin(
+                        binding.regInputName.getText().toString(),
+                        binding.enterPhone.getText().toString(),
+                        binding.enterPasswd.getText().toString()
+                )){
+                    Bundle bundle = new Bundle();
+                    bundle.putString(SignInFragment.KEY_PHONE, phone);
+                    bundle.putString(SignInFragment.KEY_PASSWORD, password);
 
-                Bundle bundle = new Bundle();
-                bundle.putString(SignInFragment.KEY_PHONE, phone);
-                bundle.putString(SignInFragment.KEY_PASSWORD, password);
-
-                /*requireActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, SignInFragment.signInFragment(phone, password))
-                        .commit();*/
-                Navigation.findNavController(view)
-                        .navigate(R.id.action_signUpFragment_to_signInFragment, bundle);
+                    Navigation.findNavController(view)
+                            .navigate(R.id.action_signUpFragment_to_signInFragment, bundle);
+                }
             }
         });
 
@@ -54,9 +60,6 @@ public class SignUpFragment extends Fragment {
                 bundle.putString(SignInFragment.KEY_PHONE, phone);
                 bundle.putString(SignInFragment.KEY_PASSWORD, password);
 
-                /*requireActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, SignInFragment.signInFragment())
-                        .commit();*/
                 Navigation.findNavController(view)
                         .navigate(R.id.action_signUpFragment_to_signInFragment, bundle);
             }
