@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lab2.R;
-import com.example.lab2.domain.entity.ProjectListItem;
+import com.example.lab2.data.models.ProjectListItem;
 
 import java.util.List;
 
