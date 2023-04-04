@@ -14,7 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.lab2.R;
-import com.example.lab2.domain.entity.ArchiveListItem;
+import com.example.lab2.data.models.ArchiveListItem;
 
 import java.util.List;
 

@@ -1,12 +1,12 @@
-package com.example.lab2.data;
+package com.example.lab2.data.repositories;
 
 import com.example.lab2.data.data_source.AccountsRemoteDataSource;
-import com.example.lab2.domain.AccountsRepository;
-import com.example.lab2.domain.entity.LoginAdmin;
-import com.example.lab2.domain.entity.LoginUser;
-import com.example.lab2.domain.entity.RegistrationUser;
+import com.example.lab2.data.models.LoginAdmin;
+import com.example.lab2.data.models.LoginUser;
+import com.example.lab2.data.models.RegistrationUser;
+import com.example.lab2.data.protocols.AccountsProtocol;
 
-public class AccountsRepositoryImplement implements AccountsRepository {
+public class AccountsRepository implements AccountsProtocol {
 
     private final AccountsRemoteDataSource dataSource = new AccountsRemoteDataSource();
     @Override

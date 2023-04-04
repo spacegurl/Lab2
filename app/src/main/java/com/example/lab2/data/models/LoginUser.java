@@ -1,13 +1,13 @@
-package com.example.lab2.domain.entity;
+package com.example.lab2.data.models;
 
-public class LoginAdmin {
+public class LoginUser {
 
-    private final String phone;
+    private String phone;
 
-    private final String password;
+    private String password;
 
 
-    public LoginAdmin(String phone, String password) {
+    public LoginUser(String phone, String password) {
         this.phone = phone;
         this.password = password;
     }
