@@ -1,13 +1,15 @@
-package com.example.lab2.data;
+package com.example.lab2.data.repositories;
+
+import androidx.lifecycle.LiveData;
 
 import com.example.lab2.data.data_source.OnboardListsLocalDataSource;
-import com.example.lab2.domain.OnboardRepository;
-import com.example.lab2.domain.entity.ArchiveListItem;
-import com.example.lab2.domain.entity.ProjectListItem;
+import com.example.lab2.data.models.ArchiveListItem;
+import com.example.lab2.data.models.ProjectListItem;
+import com.example.lab2.data.protocols.OnboardProtocol;
 
 import java.util.List;
 
-public class OnboardRepositoryImplement implements OnboardRepository {
+public class OnboardRepository implements OnboardProtocol {
 
     private final OnboardListsLocalDataSource dataSource = new OnboardListsLocalDataSource();
 
@@ -17,7 +19,7 @@ public class OnboardRepositoryImplement implements OnboardRepository {
     }
 
     @Override
-    public List<ProjectListItem> getProjectList() {
+    public LiveData<List<ProjectListItem>> getProjectList() {
         return getProjectList();
     }
 
@@ -27,12 +29,12 @@ public class OnboardRepositoryImplement implements OnboardRepository {
     }
 
     @Override
-    public ArchiveListItem getArchiveItem(int position) {
-        return dataSource.getArchiveList().get(position);
+    public LiveData<ArchiveListItem> getArchiveItem(int position) {
+        return dataSource.getArchiveItem(position);
     }
 
     @Override
-    public List<ArchiveListItem> getArchiveList() {
+    public LiveData<List<ArchiveListItem>> getArchiveList() {
         return getArchiveList();
     }
 }

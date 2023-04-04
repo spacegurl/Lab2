@@ -1,4 +1,4 @@
-package com.example.lab2.ui;
+package com.example.lab2.ui.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
