@@ -13,6 +13,7 @@ public interface OnboardProtocol {
 
     void addArchiveItem (ArchiveListItem archiveListItem);
     LiveData<ArchiveListItem> getArchiveItem(int position);
+    LiveData<ProjectListItem> getProjectItem(int position);
     LiveData<List<ArchiveListItem>> getArchiveList();
 
 

@@ -55,6 +55,19 @@ public class OnboardListsLocalDataSource {
         return mutableLiveData;
     }
 
+    public LiveData<ProjectListItem> getProjectItem(int position) {
+        String[] arr = {"Cambridge Campus", "Chelsea Cottage", "Gherkin Vogue Office",
+                "Oxford Campus", "Birmingham Campus", "Manchester Campus", "Bristol Campus", "Leeds Campus"};
+        List<ProjectListItem> list = new ArrayList<>();
+
+        for (int i = 0; i < 250; i++) {
+            list.add(new ProjectListItem(R.drawable.cat_on_docs, arr[(int) (Math.random() * arr.length)]));
+        }
+        MutableLiveData<ProjectListItem> mutableLiveData = new MutableLiveData<>();
+        mutableLiveData.setValue(list.get(position));
+        return mutableLiveData;
+    }
+
     public void addProjectItem(ProjectListItem item) {
         projectListItems.add(item);
     }

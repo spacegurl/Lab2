@@ -34,6 +34,11 @@ public class OnboardRepository implements OnboardProtocol {
     }
 
     @Override
+    public LiveData<ProjectListItem> getProjectItem(int position) {
+        return dataSource.getProjectItem(position);
+    }
+
+    @Override
     public LiveData<List<ArchiveListItem>> getArchiveList() {
         return getArchiveList();
     }
