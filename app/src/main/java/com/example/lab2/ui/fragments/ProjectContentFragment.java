@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.lab2.data.models.ProjectListItem;
+import com.example.lab2.data.database.entity.ProjectListItem;
 import com.example.lab2.databinding.FragmentProjectContentBinding;
 import com.example.lab2.ui.state_holder.ProjectListRecyclerViewAdapter;
 import com.example.lab2.ui.state_holder.view_models.ProjectContentViewModel;
@@ -43,7 +43,7 @@ public class ProjectContentFragment extends Fragment {
         projectContentViewModel.project_content_ld.observe(getViewLifecycleOwner(), new Observer<ProjectListItem>() {
             @Override
             public void onChanged(ProjectListItem projectListItem) {
-                binding.projectName.setText(projectListItem.getCompleted_project());
+                binding.projectName.setText(projectListItem.getCurrent_project());
             }
         });
     }
