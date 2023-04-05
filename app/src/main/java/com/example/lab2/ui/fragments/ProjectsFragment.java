@@ -21,11 +21,10 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.lab2.BannersAndService;
 import com.example.lab2.R;
 import com.example.lab2.databinding.FragmentProjectsBinding;
-import com.example.lab2.data.models.ProjectListItem;
+import com.example.lab2.data.database.entity.ProjectListItem;
 import com.example.lab2.ui.state_holder.ProjectListRecyclerViewAdapter;
 import com.example.lab2.ui.state_holder.view_models.ProjectsViewModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ProjectsFragment extends Fragment {

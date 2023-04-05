@@ -15,7 +15,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lab2.R;
-import com.example.lab2.data.models.ProjectListItem;
+import com.example.lab2.data.database.entity.ProjectListItem;
 
 import java.util.List;
 
@@ -41,7 +41,7 @@ public class ProjectListRecyclerViewAdapter extends RecyclerView.Adapter<Project
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) { // заполняет данными
         ProjectListItem item = projectListItems.get(position);
         holder.paintSwatches.setImageResource(item.getId_image());
-        holder.projectsText.setText(item.getCompleted_project());
+        holder.projectsText.setText(item.getCurrent_project());
         int temp = position;
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
