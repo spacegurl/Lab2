@@ -3,7 +3,7 @@ package com.example.lab2.data.protocols;
 import androidx.lifecycle.LiveData;
 
 import com.example.lab2.data.models.ArchiveListItem;
-import com.example.lab2.data.models.ProjectListItem;
+import com.example.lab2.data.database.entity.ProjectListItem;
 
 import java.util.List;
 
@@ -13,6 +13,7 @@ public interface OnboardProtocol {
 
     void addArchiveItem (ArchiveListItem archiveListItem);
     LiveData<ArchiveListItem> getArchiveItem(int position);
+    LiveData<ProjectListItem> getProjectItem(int position);
     LiveData<List<ArchiveListItem>> getArchiveList();
 
 

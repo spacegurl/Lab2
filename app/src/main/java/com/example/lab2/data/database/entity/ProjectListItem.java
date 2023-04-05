@@ -1,6 +1,16 @@
-package com.example.lab2.data.models;
+package com.example.lab2.data.database.entity;
 
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "projects_table")
 public class ProjectListItem {
+    @PrimaryKey
+    @NonNull
+    @ColumnInfo(name = "id")
+    public Integer uid;
     private int id_image;
     private String current_project;
 
@@ -13,7 +23,7 @@ public class ProjectListItem {
         return id_image;
     }
 
-    public String getCompleted_project() {
+    public String getCurrent_project() {
         return current_project;
     }
 }
