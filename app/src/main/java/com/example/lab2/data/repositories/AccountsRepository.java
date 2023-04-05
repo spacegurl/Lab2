@@ -1,5 +1,7 @@
 package com.example.lab2.data.repositories;
 
+import android.content.Context;
+
 import com.example.lab2.data.data_source.AccountsRemoteDataSource;
 import com.example.lab2.data.models.LoginAdmin;
 import com.example.lab2.data.models.LoginUser;
@@ -8,7 +10,15 @@ import com.example.lab2.data.protocols.AccountsProtocol;
 
 public class AccountsRepository implements AccountsProtocol {
 
-    private final AccountsRemoteDataSource dataSource = new AccountsRemoteDataSource();
+    private final Context context;
+
+    private final AccountsRemoteDataSource dataSource;
+
+    public AccountsRepository(Context context) {
+        this.context = context;
+        dataSource = new AccountsRemoteDataSource(context);
+    }
+
     @Override
     public boolean userLogin(LoginUser loginUser) {
         return dataSource.checkLoginValid(loginUser);
@@ -20,7 +30,7 @@ public class AccountsRepository implements AccountsProtocol {
     }
 
     @Override
-    public boolean loginAdmin(LoginAdmin loginAdmin) {
-        return dataSource.checkAdminValid(loginAdmin);
+    public boolean loginAdmin(LoginAdmin loginAdmin, boolean allowed) {
+        return dataSource.checkAdminValid(loginAdmin, allowed);
     }
 }
