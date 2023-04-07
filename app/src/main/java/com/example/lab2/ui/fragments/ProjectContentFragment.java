@@ -13,7 +13,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.lab2.data.database.entity.ProjectListItem;
 import com.example.lab2.databinding.FragmentProjectContentBinding;
-import com.example.lab2.ui.state_holder.ProjectListRecyclerViewAdapter;
+import com.example.lab2.ui.state_holder.adapter.ProjectListRecyclerViewAdapter;
 import com.example.lab2.ui.state_holder.view_models.ProjectContentViewModel;
 
 public class ProjectContentFragment extends Fragment {

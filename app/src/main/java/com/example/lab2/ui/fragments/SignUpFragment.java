@@ -37,8 +37,8 @@ public class SignUpFragment extends Fragment {
         // read
         SharedPreferences sharedPrefRead =
                 requireActivity().getPreferences(Context.MODE_PRIVATE);
-        String loginSP = sharedPrefRead.getString(SHARED_PREF_NAME, "");
-        binding.regInputName.setText(loginSP);
+        String sign_up_SP = sharedPrefRead.getString(SHARED_PREF_NAME, "");
+        binding.regInputName.setText(sign_up_SP);
 
         binding.buttonSignup.setOnClickListener(new View.OnClickListener() {
             @Override
