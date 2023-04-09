@@ -6,12 +6,8 @@
 
     android:name="androidx.navigation.fragment.NavHostFragment"
     app:defaultNavHost="true"
-    app:navGraph="@navigation/nav_graph"
+
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity" />
-    <!--    android:name="com.example.lab2.ui.fragments.StartFrameFragment"
-    декларативный/способ задания через xml
-    пишем атрибут андроид нейм и потом до него путь до нужного фрагмента.
-    в  этом случае файл джава не изменяется-->
