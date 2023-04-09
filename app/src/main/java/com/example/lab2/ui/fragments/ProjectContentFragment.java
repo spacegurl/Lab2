@@ -54,19 +54,20 @@ public class ProjectContentFragment extends Fragment {
         binding.dotsMenu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (i == 0){
+                if (i == 0) {
                     String content = binding.projectContentText.getText().toString();
                     Intent textIntent = new Intent(Intent.ACTION_SEND); // открывается список приложений,
                     // которые принимают это action
                     textIntent.setType("text/plain"); // тип содержимого
+                    textIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"sheshukov_leonid@edu.mirea.ru"});
                     textIntent.putExtra(Intent.EXTRA_SUBJECT, "This Is The Way of " + getString(R.string.app_name));
-                    textIntent.putExtra(Intent.EXTRA_EMAIL, "sheshukov_leonid@edu.mirea.ru");
                     textIntent.putExtra(Intent.EXTRA_TEXT, content);
                     requireActivity().startActivity(textIntent);
                 }
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
         });
 
