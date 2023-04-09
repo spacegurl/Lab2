@@ -29,6 +29,8 @@ public class ProjectContentFragment extends Fragment {
         if (bundle != null) {
             int position = bundle.getInt(ProjectListRecyclerViewAdapter.KEY_POS);
             projectContentViewModel.getProjectContent(position);
+            String content = bundle.getString(ProjectsFragment.CONTENT, "");
+            binding.projectContentText.setText(content);
         }
     }
 
