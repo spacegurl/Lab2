@@ -23,7 +23,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="6dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/dots_menu"
+        android:foreground="@drawable/dots_menu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/account" />
 
@@ -64,6 +64,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
+        android:gravity="start"
 
         app:layout_constraintBottom_toBottomOf="parent"
 
