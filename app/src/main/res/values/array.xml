@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="project_content">
+        <item>Share</item>
+        <item>Export to PDF</item>
+        <item>Colonize the Mars</item>
+        <item>High five to Grogu</item>
+    </string-array>
+
+</resources>
