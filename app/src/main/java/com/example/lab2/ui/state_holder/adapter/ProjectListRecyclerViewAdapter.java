@@ -1,4 +1,4 @@
-package com.example.lab2.ui.state_holder;
+package com.example.lab2.ui.state_holder.adapter;
 
 import android.content.Context;
 import android.os.Bundle;
