@@ -1,5 +1,7 @@
 package com.example.lab2.ui.fragments;
 
+import static com.example.lab2.ui.state_holder.adapter.ProjectListRecyclerViewAdapter.KEY_POS;
+
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -7,9 +9,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,6 +21,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import com.example.lab2.BannersAndService;
 import com.example.lab2.R;
@@ -31,6 +36,8 @@ public class ProjectsFragment extends Fragment {
 
     private FragmentProjectsBinding binding;
     private static final String CHANNEL_ID = "notification";
+
+    public static final String CONTENT = "content";
 
     private ProjectsViewModel viewModel;
 
@@ -51,6 +58,19 @@ public class ProjectsFragment extends Fragment {
             @Override
             public void onChanged(List<ProjectListItem> projectListItems) {
                 ProjectListRecyclerViewAdapter adapter = new ProjectListRecyclerViewAdapter(requireContext(), projectListItems); //получили список и отрисовали
+                adapter.onProjectItemListClickListener = new ProjectListRecyclerViewAdapter.OnProjectItemListClickListener() {
+                    @Override
+                    public void onProjectItemListClickListener(int position) {
+                        Bundle bundle = new Bundle();
+                        bundle.putInt(KEY_POS, position);
+                        Bundle bundle2 = getArguments();
+                        if (bundle2 != null) {
+                            bundle.putString(CONTENT, bundle2.getString(CONTENT));
+                        }
+                        Navigation.findNavController(view).navigate(R.id.action_projectsFragment_to_projectContentFragment,
+                                bundle);
+                    }
+                };
                 binding.recyclerView.setAdapter(adapter);
             }
         });
