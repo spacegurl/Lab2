@@ -36,9 +36,12 @@ public class OnboardListsLocalDataSource {
         mutableLiveData.setValue(projectListItems);
         ProjectsDataBase db = ProjectsDataBase.getDatabase(context);
         ProjectsDao projectsDao = db.projectsDao();
-        db.getQueryExecutor().execute(() -> {
-            for (ProjectListItem project : projectListItems) {
-                projectsDao.insert(project);
+        db.getQueryExecutor().execute(new Runnable() {
+            @Override
+            public void run() {
+                for (ProjectListItem project : projectListItems) {
+                    projectsDao.insert(project);
+                }
             }
         });
         return projectsDao.getProjectList();
