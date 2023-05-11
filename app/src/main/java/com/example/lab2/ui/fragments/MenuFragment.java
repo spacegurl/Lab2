@@ -1,6 +1,8 @@
 package com.example.lab2.ui.fragments;
 
+import android.graphics.drawable.AnimatedVectorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +32,15 @@ public class MenuFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                AnimatedVectorDrawable drawable = (AnimatedVectorDrawable) binding.circles.getDrawable();
+                drawable.start();
+            }
+        }, 5000);
+
         getArgs();
         binding.PROJECTSBUTTON.setOnClickListener(new View.OnClickListener() {
             @Override
