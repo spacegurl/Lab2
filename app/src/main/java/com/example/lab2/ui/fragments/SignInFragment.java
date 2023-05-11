@@ -1,6 +1,8 @@
 package com.example.lab2.ui.fragments;
 
+import android.graphics.drawable.AnimatedVectorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +41,15 @@ public class SignInFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         signInViewModel = new ViewModelProvider(this).get(SignInViewModel.class);
         super.onViewCreated(view, savedInstanceState);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                AnimatedVectorDrawable drawable = (AnimatedVectorDrawable) binding.circles.getDrawable();
+                drawable.start();
+            }
+        }, 5000);
+
         getArgs();
         binding.buttonSignin.setOnClickListener(new View.OnClickListener() {
             @Override
