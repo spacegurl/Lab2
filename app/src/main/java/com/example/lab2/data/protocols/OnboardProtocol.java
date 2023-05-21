@@ -4,8 +4,14 @@ import androidx.lifecycle.LiveData;
 
 import com.example.lab2.data.models.ArchiveListItem;
 import com.example.lab2.data.database.entity.ProjectListItem;
+import com.example.lab2.data.models.PlaceholderPost;
 
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.GET;
+import retrofit2.http.POST;
 
 public interface OnboardProtocol {
     void addProjectItem(ProjectListItem projectListItem);
@@ -15,6 +21,12 @@ public interface OnboardProtocol {
     LiveData<ArchiveListItem> getArchiveItem(int position);
     LiveData<ProjectListItem> getProjectItem(int position);
     LiveData<List<ArchiveListItem>> getArchiveList();
+
+    Call<PlaceholderPost> getPost();
+
+    Call<PlaceholderPost> pushPost(@Body PlaceholderPost post);
+
+    Call<List<PlaceholderPost>> getAllPosts();
 
 
 }
