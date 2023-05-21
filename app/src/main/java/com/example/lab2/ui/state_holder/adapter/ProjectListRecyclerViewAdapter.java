@@ -44,7 +44,7 @@ public class ProjectListRecyclerViewAdapter extends RecyclerView.Adapter<Project
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) { // заполняет данными
         ProjectListItem item = projectListItems.get(position);
-        holder.paintSwatches.setImageResource(item.getId_image());
+        //holder.paintSwatches.setImageResource(item.getId_image());
         holder.projectsText.setText(item.getCurrent_project());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
