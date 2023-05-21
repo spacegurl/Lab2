@@ -2,6 +2,7 @@ package com.example.lab2.ui.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +17,12 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.lab2.R;
 import com.example.lab2.data.database.entity.ProjectListItem;
+import com.example.lab2.data.models.PlaceholderPost;
 import com.example.lab2.databinding.FragmentProjectContentBinding;
 import com.example.lab2.ui.state_holder.adapter.ProjectListRecyclerViewAdapter;
 import com.example.lab2.ui.state_holder.view_models.ProjectContentViewModel;
+
+import java.util.List;
 
 public class ProjectContentFragment extends Fragment {
     private FragmentProjectContentBinding binding;
@@ -46,6 +50,25 @@ public class ProjectContentFragment extends Fragment {
         projectContentViewModel = new ViewModelProvider(this).get(ProjectContentViewModel.class);
         super.onViewCreated(view, savedInstanceState);
         parseArgs();
+
+        projectContentViewModel.getPostLD().observe(getViewLifecycleOwner(), new Observer<PlaceholderPost>() {
+            @Override
+            public void onChanged(PlaceholderPost placeholderPost) {
+                Log.d("NETWORK", placeholderPost.getBody());
+            }
+        });
+        projectContentViewModel.getPushLD().observe(getViewLifecycleOwner(), new Observer<PlaceholderPost>() {
+            @Override
+            public void onChanged(PlaceholderPost placeholderPost) {
+                Log.d("NETWORK", placeholderPost.getTitle());
+            }
+        });
+        projectContentViewModel.getListLD().observe(getViewLifecycleOwner(), new Observer<List<PlaceholderPost>>() {
+            @Override
+            public void onChanged(List<PlaceholderPost> placeholderPosts) {
+                Log.d("NETWORK", placeholderPosts.get(99).getTitle());
+            }
+        });
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(requireContext(),
                 R.array.project_content, android.R.layout.simple_spinner_item);
