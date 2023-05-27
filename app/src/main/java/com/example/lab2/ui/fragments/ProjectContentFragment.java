@@ -51,19 +51,19 @@ public class ProjectContentFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         parseArgs();
 
-        projectContentViewModel.getPostLD().observe(getViewLifecycleOwner(), new Observer<PlaceholderPost>() {
+        projectContentViewModel.postLD.observe(getViewLifecycleOwner(), new Observer<PlaceholderPost>() {
             @Override
             public void onChanged(PlaceholderPost placeholderPost) {
                 Log.d("NETWORK", placeholderPost.getBody());
             }
         });
-        projectContentViewModel.getPushLD().observe(getViewLifecycleOwner(), new Observer<PlaceholderPost>() {
+        projectContentViewModel.pushLD.observe(getViewLifecycleOwner(), new Observer<PlaceholderPost>() {
             @Override
             public void onChanged(PlaceholderPost placeholderPost) {
                 Log.d("NETWORK", placeholderPost.getTitle());
             }
         });
-        projectContentViewModel.getListLD().observe(getViewLifecycleOwner(), new Observer<List<PlaceholderPost>>() {
+        projectContentViewModel.getLD.observe(getViewLifecycleOwner(), new Observer<List<PlaceholderPost>>() {
             @Override
             public void onChanged(List<PlaceholderPost> placeholderPosts) {
                 Log.d("NETWORK", placeholderPosts.get(99).getTitle());

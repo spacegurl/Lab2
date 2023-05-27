@@ -3,6 +3,7 @@ package com.example.lab2.data.repositories;
 import android.content.Context;
 
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import com.example.lab2.data.api.RetrofitFactory;
 import com.example.lab2.data.api.TypeCodeAPI;
@@ -15,6 +16,8 @@ import com.example.lab2.data.protocols.OnboardProtocol;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 
 public class OnboardRepository implements OnboardProtocol {
@@ -58,26 +61,74 @@ public class OnboardRepository implements OnboardProtocol {
     }
 
     @Override
-    public Call<PlaceholderPost> getPost() {
+    public LiveData<PlaceholderPost> getPost() {
         Retrofit retrofit = RetrofitFactory.getRetrofit();
         TypeCodeAPI typeCodeAPI = retrofit.create(TypeCodeAPI.class);
         Call<PlaceholderPost> call = typeCodeAPI.getPost();
-        return call;
+
+        MutableLiveData<PlaceholderPost> postLD = new MutableLiveData<>();
+        call.enqueue(new Callback<PlaceholderPost>() {
+            @Override
+            public void onResponse(Call<PlaceholderPost> call, Response<PlaceholderPost> response) {
+                if (response.isSuccessful()) {
+                    PlaceholderPost post = response.body();
+                    postLD.setValue(post);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<PlaceholderPost> call, Throwable t) {
+
+            }
+        });
+        return postLD;
     }
 
     @Override
-    public Call<PlaceholderPost> pushPost(PlaceholderPost post) {
+    public LiveData<PlaceholderPost> pushPost() {
         Retrofit retrofit = RetrofitFactory.getRetrofit();
         TypeCodeAPI typeCodeAPI = retrofit.create(TypeCodeAPI.class);
-        Call<PlaceholderPost> call = typeCodeAPI.pushPost(post);
-        return call;
+        Call<PlaceholderPost> call = typeCodeAPI.pushPost(new PlaceholderPost(47, 65, "This is the way", "UK"));
+
+        MutableLiveData<PlaceholderPost> pushLD = new MutableLiveData<>();
+        call.enqueue(new Callback<PlaceholderPost>() {
+            @Override
+            public void onResponse(Call<PlaceholderPost> call, Response<PlaceholderPost> response) {
+                if (response.isSuccessful()) {
+                    PlaceholderPost post = response.body();
+                    pushLD.setValue(post);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<PlaceholderPost> call, Throwable t) {
+
+            }
+        });
+        return pushLD;
     }
 
     @Override
-    public Call<List<PlaceholderPost>> getAllPosts() {
+    public LiveData<List<PlaceholderPost>> getAllPosts() {
         Retrofit retrofit = RetrofitFactory.getRetrofit();
         TypeCodeAPI typeCodeAPI = retrofit.create(TypeCodeAPI.class);
         Call<List<PlaceholderPost>> call = typeCodeAPI.getAllPosts();
-        return call;
+
+        MutableLiveData<List<PlaceholderPost>> getLD = new MutableLiveData<>();
+        call.enqueue(new Callback<List<PlaceholderPost>>() {
+            @Override
+            public void onResponse(Call<List<PlaceholderPost>> call, Response<List<PlaceholderPost>> response) {
+                if (response.isSuccessful()) {
+                    List<PlaceholderPost> post = response.body();
+                    getLD.setValue(post);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<PlaceholderPost>> call, Throwable t) {
+
+            }
+        });
+        return getLD;
     }
 }

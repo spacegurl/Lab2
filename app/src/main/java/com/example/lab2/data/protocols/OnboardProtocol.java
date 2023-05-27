@@ -22,11 +22,11 @@ public interface OnboardProtocol {
     LiveData<ProjectListItem> getProjectItem(int position);
     LiveData<List<ArchiveListItem>> getArchiveList();
 
-    Call<PlaceholderPost> getPost();
+    LiveData<PlaceholderPost> getPost();
 
-    Call<PlaceholderPost> pushPost(@Body PlaceholderPost post);
+    LiveData<PlaceholderPost> pushPost();
 
-    Call<List<PlaceholderPost>> getAllPosts();
+    LiveData<List<PlaceholderPost>> getAllPosts();
 
 
 }
